@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="second_title"></div>
+<form class="input_params" id="main_form">
+  <div class="form-group" id="first_form_div">
+    <label id="func_name" for="chart_func"></label>
+    <input type="text" class="form-control" id="chart_func">
+  </div>
+  <button type="submit" class="btn btn-default" id="main_btn">Next</button>
+</form>
+
+<div class="chart-container">
+    <canvas id="myChart"></canvas>
+</div>
+
+{% end %}

@@ -1,0 +1,179 @@
+/* CSS declarations go here */
+body {
+    font-family: 'Slabo 27px', serif;
+    background: #315481 linear-gradient(to bottom, #315481, #c9ffe9 100%) fixed;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100%;
+    background: transparent;
+}
+
+.menu-container {
+    float: left;
+    width: 200px;
+    margin-top: 150px;
+    background: transparent;
+}
+
+.content-container {
+    float: right;
+    display: inline-block;
+    width: 600px;
+    max-width: 600px;
+    background: white;
+}
+
+.chart-container {
+	margin: 0 10px;
+}
+
+header {
+    background: #d2edf4 linear-gradient(to bottom, #0e3a70, #599ef2 100%);
+    padding: 20px 15px 15px 15px;
+    min-height: 70px;
+    position: relative;
+}
+
+header .auto-mode {
+    display: block;
+    float: right;
+    color: white;
+}
+
+#login-buttons {
+    display: block;
+}
+
+h1 {
+    font-size: 2.0em;
+    font-weight: 300;
+    color: #def7ff;
+    display: inline-block;
+    margin: 0 1em 10px 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 300;
+    color: #8e9194;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    display: block;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: darkslategrey;
+    display: inline-block;
+    margin: 0 1em 10px 0;
+}
+
+form {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.new-function input {
+    box-sizing: border-box;
+    color: #def7ff;
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 10px 80px 10px 0;
+    font-size: 1.1em;
+}
+
+.new-function input:focus{
+    outline: 0;
+}
+
+.input_params {
+    margin: 40px 40px;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.step {
+    box-shadow: rgba(255,255,255,.15) 0 1px 0 0;
+    display: block;
+    line-height: 2.0em;
+    padding: .5em 1em;
+    position: relative;
+    color: white;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.step-active {
+	background-color: rgba(201, 255, 233, 0.6);
+}
+
+.start-step {
+    margin: 10px 20px;
+}
+
+.start-btn {
+    width: 200px;
+    height: 40px;
+    margin: 17px auto 0;
+    display:block;
+    background-color: #599ef2;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 1.4em;
+    font-family: 'Slabo 27px', serif;
+    color: #def7ff;
+}
+
+.btn-default {
+    min-width: 100px;
+    background-color: #599ef2;
+    color: #def7ff;
+}
+
+.form-error {
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+.form-error:focus {
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+.func-f {
+    margin-left: 40px;
+    font-size: 1.4em;
+}

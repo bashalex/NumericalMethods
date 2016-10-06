@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numerical Methods</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <script src="/static/js/jquery-3.1.1.js"></script>
+    <script src="/static/js/math.js"></script>
+    <script src="/static/js/Chart.js"></script>
+    <script src="/static/js/main.js"></script>
+    {% block imports %}
+
+    {% end %}
+</head>
+<body>
+    <div class="container">
+        <div class="menu-container">
+            <section id="menu">
+                <div class="list-modules">
+                    {% for step in steps %}
+                    <a href="#" id="{{ generateId(step.id) }}" class="step">
+                    {{ escape(step.name) }}
+                    </a>
+                    {% end %}
+                </div>
+            </section>
+        </div>
+
+        <div class="content-container">
+            <header>
+                <h1>Numerical Methods</h1>
+                <div class="checkbox auto-mode">
+                    <label><input type="checkbox" /> Auto Mode</label>
+                </div>
+            </header>
+
+            <div class="content">
+                <h2 id="step_name"></h2>
+
+                {% block content %}
+                <!--Here will be main content of the page-->
+                {% end %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
