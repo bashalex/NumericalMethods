@@ -26,8 +26,10 @@ class MainHandler(tornado.web.RequestHandler):
             save_func(name, function)
         elif action == 'update_params':
             params.b = self.get_argument('paramB')
+            # params.b1 = self.get_argument('paramB1')
             params.x = self.get_argument('paramX')
             params.y = self.get_argument('paramY')
-            data.save_params(params.b, params.x, params.y)
+            print(params.b, params.x, params.y)
+            data.save_params(params.b, params.x, params.y, params.b1)
         elif action == 'run_tests':
             usecases.run()

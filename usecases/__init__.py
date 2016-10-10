@@ -54,7 +54,7 @@ def test2():
     for i in range(1, int(T / step)):
         X[i] = X[i-1] + (_t[i] - _t[i-1]) * z1_func.evalf(subs={t: _t[i]}) * U_func.evalf(subs={y: Y[i-1]})
         Y[i] = Y[i-1] + (_t[i] - _t[i-1]) * b * (X[i] - z_func.evalf(subs={t: _t[i]}))
-    data.save_cauchy_solution(X, Y)
+    data.save_cauchy_solution(X, Y, _t)
 
 
 def run():

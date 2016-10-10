@@ -25,14 +25,19 @@ def save_z_function(x, y):
     __save_function(x, y, __z_path)
 
 
-def save_params(b, x0, y0):
+def save_params(b, x0, y0, b1=None):
     with open(__coefs_path, "w") as f:
-        f.write(" ".join([b, x0, y0]))
+        f.write(" ".join([b, x0, y0] if b1 is None else [b, x0, y0, b1]))
     print("params {}, {}, {} saved.".format(b, x0, y0))
 
 
-def save_cauchy_solution(x, y):
-    __save_function(x, y, __cauchy_sol_path)
+def save_cauchy_solution(x, y, t):
+    with open(__cauchy_sol_path, "w") as f:
+        f.write(" ".join([str(item) for item in x]))
+        f.write('\n')
+        f.write(" ".join([str(item) for item in y]))
+        f.write('\n')
+        f.write(" ".join([str(item) for item in t]))
 
 
 def get_params():

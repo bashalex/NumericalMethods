@@ -6,10 +6,11 @@ class Step:
 
 
 class Params:
-    def __init__(self, b, x, y):
+    def __init__(self, b, x, y, b1=None):
         self.b = b
         self.x = x
         self.y = y
+        self.b1 = b1
 
 steps = [Step(1, "Load Distribution"),
          Step(2, "Load Plan"),

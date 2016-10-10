@@ -9,6 +9,8 @@ $( document ).ready(() => {
     let paramX0 = 0;
     let paramY0 = 0;
 
+    let auto_mode = false;
+
     // chart configs
     let options = {
         ///Boolean - Whether grid lines are shown across the chart
@@ -110,6 +112,15 @@ $( document ).ready(() => {
         switchToStep(cur_step + 1)
     });
 
+    $(".auto-mode").on('click', () => {
+        auto_mode = !auto_mode;
+        if (auto_mode) {
+            $( '<input type="number" class="form-control" id="param_b1" placeholder="' + paramB + '">').insertBefore( '#param_b' );
+        } else {
+            $("#param_b1").remove();
+        }
+    });
+
     function switchToStep(new_step) {
         // TODO: change it later
         if (new_step == 6) {
@@ -140,6 +151,9 @@ $( document ).ready(() => {
             field[0].placeholder = '0.01';
             $('.second_title').append('<li class="func-f" id="sec-title">f(z, x, S, β) = β(x - z)</li>');
             $( '<div class="form-group" id="pb"><label for="param_b">parameter β</label><input type="number" class="form-control" id="param_b" placeholder="' + paramB + '"></div>').insertBefore( '#main_btn' );
+            if (auto_mode) {
+                $( '<input type="number" class="form-control" id="param_b1" placeholder="' + paramB + '">').insertBefore( '#param_b' );
+            }
             $( '<div class="form-group" id="px"><label for="param_x">parameter X0</label><input type="number" class="form-control" id="param_x" placeholder="' + paramX0 + '"></div>').insertBefore( '#main_btn' );
             $( '<div class="form-group" id="py"><label for="param_y">parameter Y0</label><input type="number" class="form-control" id="param_y" placeholder="' + paramY0 + '"></div>').insertBefore( '#main_btn' );
             add_listeners();
