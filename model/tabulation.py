@@ -1,10 +1,7 @@
 import sympy
 import numpy as np
-from threading import Thread, Lock
-
-p_lock = Lock()
-s_lock = Lock()
-z_lock = Lock()
+from threading import Thread
+from model import data
 
 
 class Save(Thread):
@@ -16,20 +13,13 @@ class Save(Thread):
     def run(self):
         if self.name == 'ρ(w)':
             x, y = self.tabulate(self.function, 0, 1, 0.01)
-            self.write(x, y, './data/p_func.csv')
+            data.save_p_function(x, y)
         if self.name == 'S(t)':
             x, y = self.tabulate(self.function, 0, 100, 1)
-            self.write(x, y, './data/s_func.csv')
+            data.save_s_function(x, y)
         if self.name == 'z(t)':
             x, y = self.tabulate(self.function, 0, 100, 1)
-            self.write(x, y, './data/z_func.csv')
-        print("function {} saved.".format(self.function))
-
-    def write(self, x, y, path):
-        with open(path, "w") as f:
-            f.write(" ".join([str(item) for item in x]))
-            f.write('\n')
-            f.write(" ".join([str(item) for item in y]))
+            data.save_z_function(x, y)
 
     def tabulate(self, function, start, end, step):
         w, t = sympy.symbols('w t')

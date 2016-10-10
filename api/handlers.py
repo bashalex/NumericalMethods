@@ -2,6 +2,7 @@ import tornado.web
 
 from api.models import steps, params
 from model.tabulation import *
+from model import data
 import usecases
 
 
@@ -27,6 +28,6 @@ class MainHandler(tornado.web.RequestHandler):
             params.b = self.get_argument('paramB')
             params.x = self.get_argument('paramX')
             params.y = self.get_argument('paramY')
-            print("new params: β = {}, X = {}, Y = {}".format(params.b, params.x, params.y))
+            data.save_params(params.b, params.x, params.y)
         elif action == 'run_tests':
             usecases.run()
