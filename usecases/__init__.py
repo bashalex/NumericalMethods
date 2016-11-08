@@ -13,12 +13,12 @@ def test1():
                                                           y is not None else 'ERROR'))
     # step 2
     print("Test integration of p function...")
-    integral_values = integrate_p_func(x, y)
-    print("Test integration of p function...{}".format('OK' if sum(integral_values) == 0 else 'ERROR'))
+    integral_value = integrate_p_func(x, y)
+    print("Test integration of p function...{}".format('OK' if integral_value > 0 else 'ERROR'))
 
     # step 3
     print("Test interpolation...")
-    interpolation = interpolate(integral_values)
+    interpolation = interpolate(x)
     print("Test interpolation...{}".format('OK' if sum(interpolation) == 3 else 'ERROR'))
 
     # step 3.1
@@ -38,8 +38,8 @@ def test2():
     print("Test reading params from file...")
     b, x0, y0 = data.get_params()
     print("Test reading params from file...{}".format('OK' if x0 is not None and
-                                                    y0 is not None and
-                                                    b is not None else 'ERROR'))
+                                                      y0 is not None and
+                                                      b is not None else 'ERROR'))
     T = 1
     step = 0.01
     y, t = sympy.symbols('y t')

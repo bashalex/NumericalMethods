@@ -23,7 +23,7 @@ class MainHandler(tornado.web.RequestHandler):
         if action == 'update_function':
             name = self.get_argument('func_name')
             function = self.get_argument('func')
-            save_func(name, function)
+            save_tabulated_func(name, function)
         elif action == 'update_params':
             params.b = self.get_argument('paramB')
             # params.b1 = self.get_argument('paramB1')

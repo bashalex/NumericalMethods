@@ -3,6 +3,9 @@
     <words>
       <w>coefs</w>
       <w>datasets</w>
+      <w>maindir</w>
+      <w>pythonpath</w>
+      <w>scipy</w>
       <w>usecase</w>
     </words>
   </dictionary>
