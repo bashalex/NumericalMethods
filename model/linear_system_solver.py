@@ -97,4 +97,4 @@ def inverse(A):
 
 
 def max_abs_sum_norm(A):
-    return max(abs(sum(A[i])) for i in range(len(A)))
+    return max(sum(map(abs, A[i])) for i in range(len(A)))
