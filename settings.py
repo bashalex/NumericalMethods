@@ -1,1 +1,1 @@
-p_func_tabulations_step = 0.001
+p_func_tabulations_step = 0.01
