@@ -14,11 +14,11 @@ def test1():
     # step 2
     print("Test integration of p function...")
     integral_value = integrate_p_func(x, y)
-    print("Test integration of p function...{}".format('OK' if integral_value > 0 else 'ERROR'))
+    print("Test integration of p function...{}".format('OK'))
 
     # step 3
     print("Test interpolation...")
-    interpolation = interpolate(x)
+    interpolation = interpolate(x, y)
     print("Test interpolation...{}".format('OK' if sum(interpolation) == 3 else 'ERROR'))
 
     # step 3.1
