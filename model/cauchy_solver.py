@@ -19,11 +19,15 @@ def solve(f0, f1, t, x0, y0):
         # calculate step
         step = t[i+1] - t[i]
         # calculate coefficients
-        kx1, ky1 = f0(t[i], x[i], y[i]), f1(t[i], x[i], y[i])
-        kx2, ky2 = f0(t[i] + step / 2., x[i] + kx1 / 2., y[i] + ky1 / 2.), f1(t[i] + step / 2., x[i] + kx1 / 2., y[i] + ky1 / 2.)
-        kx3, ky3 = f0(t[i] + step / 2., x[i] + kx2 / 2., y[i] + ky2 / 2.), f1(t[i] + step / 2., x[i] + kx2 / 2., y[i] + ky2 / 2.)
-        kx4, ky4 = f0(t[i] + step, x[i] + kx3, y[i] + ky3), f1(t[i] + step, x[i] + kx3, y[i] + ky3)
+        kx1 = f0(t[i], x[i], y[i]) * step
+        ky1 = f1(t[i], x[i], y[i]) * step
+        kx2 = f0(t[i] + step / 2., x[i] + kx1 / 2., y[i] + ky1 / 2.) * step
+        ky2 = f1(t[i] + step / 2., x[i] + kx1 / 2., y[i] + ky1 / 2.) * step
+        kx3 = f0(t[i] + step / 2., x[i] + kx2 / 2., y[i] + ky2 / 2.) * step
+        ky3 = f1(t[i] + step / 2., x[i] + kx2 / 2., y[i] + ky2 / 2.) * step
+        kx4 = f0(t[i] + step, x[i] + kx3, y[i] + ky3) * step
+        ky4 = f1(t[i] + step, x[i] + kx3, y[i] + ky3) * step
         # calculate current values
-        x[i+1] = x[i] + (step / 6.) * (kx1 + 2 * kx2 + 2 * kx3 + kx4)
-        y[i+1] = y[i] + (step / 6.) * (ky1 + 2 * ky2 + 2 * ky3 + ky4)
+        x[i+1] = x[i] + (kx1 + 2 * kx2 + 2 * kx3 + kx4) / 6.
+        y[i+1] = y[i] + (ky1 + 2 * ky2 + 2 * ky3 + ky4) / 6.
     return x, y
