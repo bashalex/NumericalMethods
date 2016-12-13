@@ -33,7 +33,3 @@ def interpolate(x, y):
     # approximate m[N] as y(N)'
     m[N] = (11 * y[N] - 18 * y[N - 1] + 9 * y[N - 2] - 2 * y[N - 3]) / (6 * step)
     return lambda _x: __get_value(_x, m, x, y, step)
-
-# x, y = data.get_p_function()
-# f = interpolate(x, y)
-# print(f(0.2))
